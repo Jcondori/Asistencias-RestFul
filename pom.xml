@@ -34,6 +34,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.noraui</groupId>
+            <artifactId>ojdbc7</artifactId>
+            <version>12.1.0.2</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -64,6 +69,15 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <url>http://nexus.saas.hand-china.com/content/repositories/rdc/</url>
+            <id>oracle</id>
+            <layout>default</layout>
+            <name>Oracle Driver JDBC</name>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>
