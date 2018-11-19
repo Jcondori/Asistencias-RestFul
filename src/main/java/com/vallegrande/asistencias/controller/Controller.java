@@ -1,13 +1,11 @@
 package com.vallegrande.asistencias.controller;
 
 import com.google.gson.JsonObject;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/v1/demo")
+@RequestMapping(value = "/v1/demo",produces = MediaType.APPLICATION_JSON_VALUE)
 public class Controller {
 
     //Recibir patametros por URL
@@ -20,6 +18,20 @@ public class Controller {
         return objeto.toString();
     }
 
+    //Recibir patametros por metodo GET
+    @GetMapping("/param")
+    public String getUrlParam(@RequestParam(name="parametro") String parametro){
+        JsonObject objeto = new JsonObject();
+        objeto.addProperty("parametro", parametro);
+        return objeto.toString();
+    }
 
+    //Recibir patametros por el Header
+    @GetMapping("/header")
+        public String getHeaders(@RequestHeader("Demo") String demo){
+        JsonObject objeto = new JsonObject();
+        objeto.addProperty("Demo", demo);
+        return objeto.toString();
+    }
 
 }

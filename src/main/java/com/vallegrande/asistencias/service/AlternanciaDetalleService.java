@@ -21,11 +21,11 @@ public class AlternanciaDetalleService {
         return repository.findAll();
     }
 
-    public List<AlternanciaDetalle> findbyAlumno(String codAlum,String estAlt) {
-        return repository.findByAlumno_CodAlumAndAlternancia_Estalt(codAlum,estAlt);
+    public List<AlternanciaDetalle> findbyAlumno(String codAlum, String estAlt) {
+        return repository.findByAlumno_CodAlumAndAlternancia_Estalt(codAlum, estAlt);
     }
 
-    public  List<AlternanciaDetalle> obtenePaginado(Pageable pageable){
+    public List<AlternanciaDetalle> obtenePaginado(Pageable pageable) {
         return repository.findAll(pageable).getContent();
     }
 

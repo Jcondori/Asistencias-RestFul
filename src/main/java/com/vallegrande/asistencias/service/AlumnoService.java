@@ -19,4 +19,8 @@ public class AlumnoService {
         return repository.findAll();
     }
 
+    public boolean login(String codAlum,String pwdAlum){
+        return !repository.findByCodAlumAndPwdAlum(codAlum, pwdAlum).isEmpty();
+    }
+
 }
