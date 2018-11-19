@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("CarreraService")
+@Service("carreraService")
 public class CarreraService {
 
     @Autowired
-    @Qualifier("CarreraRepository")
+    @Qualifier("carreraRepository")
     private CarreraRepository repository;
 
     public List<Carrera> findAll() {

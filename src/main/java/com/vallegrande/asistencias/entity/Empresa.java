@@ -18,12 +18,15 @@ public class Empresa implements Serializable {
     @Id
     @Column(name = "COD_EMP")
     private BigInteger codEmp;
+
     @Size(max = 250)
     @Column(name = "NOM_EMP")
     private String nomEmp;
+
     @Size(max = 14)
     @Column(name = "DOC_EMP")
     private String docEmp;
+
     @Size(max = 1)
     @Column(name = "EST_EMP")
     private String estEmp;

@@ -14,7 +14,7 @@ import java.util.List;
 public class CarreraController {
 
     @Autowired
-    @Qualifier("CarreraService")
+    @Qualifier("carreraService")
     private CarreraService service;
 
     @GetMapping
