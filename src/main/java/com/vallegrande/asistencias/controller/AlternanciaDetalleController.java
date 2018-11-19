@@ -17,7 +17,7 @@ import java.util.List;
 public class AlternanciaDetalleController {
 
     @Autowired
-//    @Qualifier("alternanciaDetalleService")
+    @Qualifier("alternanciaDetalleService")
     private AlternanciaDetalleService service;
 
     @GetMapping
