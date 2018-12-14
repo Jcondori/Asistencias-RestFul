@@ -23,9 +23,11 @@ public class Asistencia implements Serializable {
     private BigInteger codAs;
 
     @Column(name = "FCH_DIA")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy")
     private LocalDate fchDia;
 
     @Column(name = "HORA_ENT1")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="hh:mm a")
     private LocalTime horaEnt1;
 
     @JsonIgnore
@@ -33,6 +35,7 @@ public class Asistencia implements Serializable {
     private LocalTime horaEnt2;
 
     @Column(name = "HORA_SAL1")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="hh:mm a")
     private LocalTime horaSal1;
 
     @JsonIgnore

@@ -1,5 +1,6 @@
 package com.vallegrande.asistencias.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -31,6 +32,7 @@ public class Monitor implements Serializable {
     private String dnimon;
 
     @Column(name = "NACMON")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy")
     private LocalDate nacmon;
 
     @Size(max = 50)

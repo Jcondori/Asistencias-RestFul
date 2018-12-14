@@ -1,5 +1,6 @@
 package com.vallegrande.asistencias.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -19,12 +20,15 @@ public class Practicas implements Serializable {
     private BigInteger codPrac;
 
     @Column(name = "FCH_INI_PRAC")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy")
     private LocalDate fchIniPrac;
 
     @Column(name = "FCH_FIN_PRAC")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy")
     private LocalDate fchFinPrac;
 
     @Column(name = "FCH_SYSTEM")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy")
     private LocalDate fchSystem;
 
     @Size(max = 1)
