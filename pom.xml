@@ -8,7 +8,7 @@
     <version>0.0.1</version>
     <packaging>war</packaging>
 
-    <name>asistencias</name>
+    <name>Asistencias-RestFull</name>
     <description>Sistema de Asistencias Online</description>
 
     <parent>
