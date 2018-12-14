@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -18,16 +19,13 @@ public class Practicas implements Serializable {
     private BigInteger codPrac;
 
     @Column(name = "FCH_INI_PRAC")
-    @Temporal(TemporalType.DATE)
-    private Date fchIniPrac;
+    private LocalDate fchIniPrac;
 
     @Column(name = "FCH_FIN_PRAC")
-    @Temporal(TemporalType.DATE)
-    private Date fchFinPrac;
+    private LocalDate fchFinPrac;
 
     @Column(name = "FCH_SYSTEM")
-    @Temporal(TemporalType.DATE)
-    private Date fchSystem;
+    private LocalDate fchSystem;
 
     @Size(max = 1)
     @Column(name = "EST_PRAC")

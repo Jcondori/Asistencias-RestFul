@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -26,8 +27,7 @@ public class AlternanciaDetalle implements Serializable {
     private String estaltdet;
 
     @Column(name = "FECMONITOREO")
-    @Temporal(TemporalType.DATE)
-    private Date fecmonitoreo;
+    private LocalDate fecmonitoreo;
 
     @Size(max = 300)
     @Column(name = "OBSMONITOREO")

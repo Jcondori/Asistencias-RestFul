@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -30,8 +31,7 @@ public class Alumno implements Serializable {
     private String ingrAlum;
 
     @Column(name = "FCH_NAC_ALUM")
-    @Temporal(TemporalType.DATE)
-    private Date fchNacAlum;
+    private LocalDate fchNacAlum;
 
     @Size(max = 50)
     @Column(name = "CORREO_ALUM")

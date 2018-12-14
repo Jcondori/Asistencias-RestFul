@@ -3,11 +3,14 @@ package com.vallegrande.asistencias.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 
 @Data
@@ -20,26 +23,21 @@ public class Asistencia implements Serializable {
     private BigInteger codAs;
 
     @Column(name = "FCH_DIA")
-    @Temporal(TemporalType.DATE)
-    private Date fchDia;
+    private LocalDate fchDia;
 
     @Column(name = "HORA_ENT1")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date horaEnt1;
+    private LocalTime horaEnt1;
 
     @JsonIgnore
     @Column(name = "HORA_ENT2")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date horaEnt2;
+    private LocalTime horaEnt2;
 
     @Column(name = "HORA_SAL1")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date horaSal1;
+    private LocalTime horaSal1;
 
     @JsonIgnore
     @Column(name = "HORA_SAL2")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date horaSal2;
+    private LocalTime horaSal2;
 
     @Size(max = 1)
     @Column(name = "DENDIA")

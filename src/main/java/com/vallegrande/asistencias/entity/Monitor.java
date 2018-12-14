@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -30,8 +31,7 @@ public class Monitor implements Serializable {
     private String dnimon;
 
     @Column(name = "NACMON")
-    @Temporal(TemporalType.DATE)
-    private Date nacmon;
+    private LocalDate nacmon;
 
     @Size(max = 50)
     @Column(name = "CORMON")
