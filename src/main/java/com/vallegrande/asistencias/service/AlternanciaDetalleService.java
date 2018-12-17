@@ -22,7 +22,11 @@ public class AlternanciaDetalleService {
     }
 
     public AlternanciaDetalle findbyAlternanciaAlumno(String codAlum) {
-        return repository.findByAlumno_CodAlumAndAlternancia_EstaltOrderByCodaltdetDesc(codAlum, "A").get(0);
+        List<AlternanciaDetalle> lista = repository.findByAlumno_CodAlumAndAlternancia_EstaltOrderByCodaltdetDesc(codAlum, "A");
+        if (lista.size() > 0) {
+            return lista.get(0);
+        }
+        return null;
     }
 
     public List<AlternanciaDetalle> obtenePaginado(Pageable pageable) {
