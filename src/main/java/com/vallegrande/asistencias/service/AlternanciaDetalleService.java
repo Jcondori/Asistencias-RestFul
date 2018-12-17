@@ -21,8 +21,8 @@ public class AlternanciaDetalleService {
         return repository.findAll();
     }
 
-    public List<AlternanciaDetalle> findbyAlumno(String codAlum, String estAlt) {
-        return repository.findByAlumno_CodAlumAndAlternancia_Estalt(codAlum, estAlt);
+    public AlternanciaDetalle findbyAlternanciaAlumno(String codAlum) {
+        return repository.findByAlumno_CodAlumAndAlternancia_EstaltOrderByCodaltdetDesc(codAlum, "A").get(0);
     }
 
     public List<AlternanciaDetalle> obtenePaginado(Pageable pageable) {

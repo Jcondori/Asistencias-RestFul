@@ -13,8 +13,10 @@ import java.util.List;
 @Repository("alternanciaDetalleRepository")
 public interface AlternanciaDetalleRepository extends JpaRepository<AlternanciaDetalle, Serializable>, PagingAndSortingRepository<AlternanciaDetalle, Serializable> {
 
-    public abstract List<AlternanciaDetalle> findByAlumno_CodAlumAndAlternancia_Estalt (String codAlum,String estAlt);
+//    public abstract List<AlternanciaDetalle> findByAlumno_CodAlumAndAlternancia_Estalt(String codAlum, String estAlt);
 
     public abstract Page<AlternanciaDetalle> findAll(Pageable pageable);
+
+    public abstract List<AlternanciaDetalle> findByAlumno_CodAlumAndAlternancia_EstaltOrderByCodaltdetDesc(String codAlum, String estAlt);
 
 }

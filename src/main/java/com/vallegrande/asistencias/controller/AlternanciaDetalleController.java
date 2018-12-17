@@ -23,10 +23,9 @@ public class AlternanciaDetalleController {
         return service.findAll();
     }
 
-    @GetMapping("/{codAlum}/{estAlt}")
-    public List<AlternanciaDetalle> findByAlumno(@PathVariable("codAlum") String codAlum,
-                                                 @PathVariable("estAlt") String estAlt) {
-        return service.findbyAlumno(codAlum, estAlt);
+    @GetMapping("/{codAlum}")
+    public AlternanciaDetalle findByAlumno(@PathVariable("codAlum") String codAlum) {
+        return service.findbyAlternanciaAlumno(codAlum);
     }
 
     @GetMapping("/p")

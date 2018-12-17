@@ -1,6 +1,7 @@
 package com.vallegrande.asistencias.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -32,7 +33,7 @@ public class Alumno implements Serializable {
     private String ingrAlum;
 
     @Column(name = "FCH_NAC_ALUM")
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate fchNacAlum;
 
     @Size(max = 50)
@@ -63,6 +64,7 @@ public class Alumno implements Serializable {
     @Column(name = "REF_ALUM")
     private String refAlum;
 
+    @JsonIgnore
     @Size(max = 50)
     @Column(name = "PWD_ALUM")
     private String pwdAlum;
