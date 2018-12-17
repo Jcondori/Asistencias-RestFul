@@ -5,13 +5,11 @@ import com.vallegrande.asistencias.service.AlternanciaDetalleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("v1/alternancia/detalle")
 public class AlternanciaDetalleController {
@@ -21,18 +19,18 @@ public class AlternanciaDetalleController {
     private AlternanciaDetalleService service;
 
     @GetMapping
-    public List<AlternanciaDetalle> findAll(){
+    public List<AlternanciaDetalle> findAll() {
         return service.findAll();
     }
 
     @GetMapping("/{codAlum}/{estAlt}")
     public List<AlternanciaDetalle> findByAlumno(@PathVariable("codAlum") String codAlum,
-                                                 @PathVariable("estAlt") String estAlt){
-        return service.findbyAlumno(codAlum,estAlt);
+                                                 @PathVariable("estAlt") String estAlt) {
+        return service.findbyAlumno(codAlum, estAlt);
     }
 
     @GetMapping("/p")
-    public List<AlternanciaDetalle> getPagina(Pageable pageable){
+    public List<AlternanciaDetalle> getPagina(Pageable pageable) {
         return service.obtenePaginado(pageable);
     }
 

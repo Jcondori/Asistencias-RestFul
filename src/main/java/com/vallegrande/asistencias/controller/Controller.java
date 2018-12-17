@@ -4,8 +4,9 @@ import com.google.gson.JsonObject;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @RestController
-@RequestMapping(value = "/v1/demo",produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/v1/demo", produces = MediaType.APPLICATION_JSON_VALUE)
 public class Controller {
 
     //Recibir patametros por URL
@@ -20,7 +21,7 @@ public class Controller {
 
     //Recibir patametros por metodo GET
     @GetMapping("/param")
-    public String getUrlParam(@RequestParam(name="parametro") String parametro){
+    public String getUrlParam(@RequestParam(name = "parametro") String parametro) {
         JsonObject objeto = new JsonObject();
         objeto.addProperty("parametro", parametro);
         return objeto.toString();
@@ -28,7 +29,7 @@ public class Controller {
 
     //Recibir patametros por el Header
     @GetMapping("/header")
-        public String getHeaders(@RequestHeader("Demo") String demo){
+    public String getHeaders(@RequestHeader("Demo") String demo) {
         JsonObject objeto = new JsonObject();
         objeto.addProperty("Demo", demo);
         return objeto.toString();

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/v1/carrera")
 public class CarreraController {
@@ -18,12 +19,12 @@ public class CarreraController {
     private CarreraService service;
 
     @GetMapping
-    public List<Carrera> finAll(){
+    public List<Carrera> finAll() {
         return service.findAll();
     }
 
     @PutMapping
-    public boolean create(@RequestBody @Valid Carrera carrera){
+    public boolean create(@RequestBody @Valid Carrera carrera) {
         return service.create(carrera);
     }
 
